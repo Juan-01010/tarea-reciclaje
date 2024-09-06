@@ -1,0 +1,23 @@
+import discord 
+from discord.ext import commands
+import requests
+
+intents = discord.Intents.default()
+
+intents.message_content = True
+
+bot = commands.Bot(command_prefix='!', intents=intents)
+
+@bot.event
+async def on_ready():
+    print(f'Hemos iniciado sesión como {bot.user}')
+
+@bot.command()
+async def plastico(ctx):
+    await ctx.send(f'Títeres con calcetines, Un bolso con un pantalón viejo,Una maceta hecha con una bota de lluvia, Mini invernaderos con botellas de plástico, Floreros hechos con frascos.')
+
+@bot.command()
+async def cascaradefrutas(ctx):
+    await ctx.send(f'Té de cáscara de fruta, Reforzador de abono.')
+
+bot.run("")
